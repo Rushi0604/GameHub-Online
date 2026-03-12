@@ -4,6 +4,4 @@ pillow
 requests
 mysql-connector-python
 fpdf2
-postgrest
-datetime
-random
+pandas
