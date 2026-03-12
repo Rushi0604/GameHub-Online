@@ -3,7 +3,7 @@ supabase-py
 pillow
 requests
 mysql-connector-python
-fpdf
+fpdf2
 postgrest
 datetime
 random
