@@ -1,6 +1,9 @@
 streamlit
 supabase-py
-postgrest
 pillow
 requests
 mysql-connector-python
+fpdf
+postgrest
+datetime
+random
