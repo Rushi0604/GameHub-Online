@@ -1,7 +1,5 @@
 streamlit
-supabase-py
-pillow
-requests
-mysql-connector-python
+supabase
 fpdf2
-pandas
+mysql-connector-python
+pillow
