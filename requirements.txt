@@ -1,0 +1,6 @@
+streamlit
+supabase
+postgrest
+pillow
+requests
+mysql-connector-python
