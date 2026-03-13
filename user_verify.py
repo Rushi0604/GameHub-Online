@@ -16,24 +16,29 @@ class Verify_User:
             user_info=spc.supabase.table("user").select("*").execute().data
             phone=True
         d,p=0,0
+        login=False
         for i in user_info:
             if data==str(i["user_email"]) or data==str(i["user_phone"]):
                 d=1
                 if password==i["password"]:
                     p=1
-                    if st.button("Login"):
-                        st.success("Login Successfull")
-                        if email:
-                            st.session_state.email=data
-                            if data[1]!=0:
-                                st.session_state.phone=i["user_phone"]
-                        if phone:
-                            st.session_state.phone=data
-                            if data[0]!=" ":
-                                st.session_state.email=i["user_email"]
-                        st.session_state.password=password
-                        st.session_state.page="webpage"
-                        st.rerun()
+                    login=True
+        if st.button("Login"):
+            if login and d==1 and p==1:
+                st.success("Login Successfull")
+                if email:
+                    st.session_state.email=data
+                    if data[1]!=0:
+                        st.session_state.phone=i["user_phone"]
+                if phone:
+                    st.session_state.phone=data
+                    if data[0]!=" ":
+                        st.session_state.email=i["user_email"]
+                st.session_state.password=password
+                st.session_state.page="webpage"
+                st.rerun()
+            else:
+                st.error("Invalid Email/Phone Number or Password")
         if data and password:
             if d==0:
                 st.error("Invalid Email/Phone Number")
